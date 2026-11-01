@@ -19,14 +19,14 @@ function displayDetailAndGuide(item) {
 
   // 수치 기반 행동 추천 알고리즘
   if (pm10 <= 30) {
-    outdoorGuide = '🏃 **야외 활동**: 야외 운동 및 산책을 하기 매우 좋은 날씨입니다.';
-    ventilationGuide = '🪟 **실내 환기**: 하루 종일 자유롭게 실내 환기를 실시해도 좋습니다.';
+    outdoorGuide = '🏃야외 활동: 야외 운동 및 산책을 하기 매우 좋은 날씨입니다.';
+    ventilationGuide = '🪟실내 환기: 하루 종일 자유롭게 실내 환기를 실시해도 좋습니다.';
   } else if (pm10 <= 80) {
-    outdoorGuide = '🚶 **야외 활동**: 무난한 날씨이나 호흡기 민감군은 장시간 야외활동 시 주의하세요.';
-    ventilationGuide = '🪟 **실내 환기**: 하루 3회, 30분씩 환기하는 것을 추천합니다.';
+    outdoorGuide = '🚶야외 활동: 무난한 날씨이나 호흡기 민감군은 장시간 야외활동 시 주의하세요.';
+    ventilationGuide = '🪟실내 환기: 하루 3회, 30분씩 환기하는 것을 추천합니다.';
   } else {
-    outdoorGuide = '😷 **야외 활동**: KF80 이상의 마스크를 꼭 착용하시고 장시간 야외 활동을 자제하세요.';
-    ventilationGuide = '🚫 **실내 환기**: 외부 환기를 자제하고 공기청정기를 가동하세요.';
+    outdoorGuide = '😷야외 활동: KF80 이상의 마스크를 꼭 착용하시고 장시간 야외 활동을 자제하세요.';
+    ventilationGuide = '🚫실내 환기: 외부 환기를 자제하고 공기청정기를 가동하세요.';
   }
 
   document.getElementById('guide-box').innerHTML = `
