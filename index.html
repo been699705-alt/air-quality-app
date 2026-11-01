@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에어캐스트 - 실시간 대기질 모니터링</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🌤️ 에어캐스트 (AirCast)</h1>
+    <nav>
+      <a href="index.html">대시보드</a>
+      <a href="detail.html">맞춤 가이드</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 전국 17개 시·도 선택 드롭다운 -->
+    <section class="card" style="display: flex; align-items: center; justify-content: space-between;">
+      <label for="sido-select" style="font-weight: bold; font-size: 1.1em;">📍 조회 지역 선택:</label>
+        <select id="sido-select" style="padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em;">
+            <option value="서울">서울</option>
+            <option value="경기">경기</option>
+            <option value="인천">인천</option>
+            <option value="부산">부산</option>
+            <option value="대구">대구</option>
+            <option value="광주">광주</option>
+            <option value="대전">대전</option>
+            <option value="울산">울산</option>
+            <option value="세종">세종</option>
+            <option value="강원">강원</option>
+            <option value="충북">충북</option>
+            <option value="충남">충남</option>
+            <option value="전북">전북</option>
+            <option value="전남">전남</option>
+            <option value="경북">경북</option>
+            <option value="경남">경남</option>
+            <option value="제주">제주</option>
+        </select>
+    </section>
+
+    <!-- 대기 상태 정보 카드 -->
+    <section class="card">
+      <h2>실시간 대기 상태</h2>
+      <p id="station-name">측정소 정보를 불러오는 중...</p>
+      <div id="pm10-status" class="status-badge">불러오는 중</div>
+      <p style="margin-top: 15px;">미세먼지(PM10): <strong id="pm10-value">-</strong> µg/m³</p>
+      <p>초미세먼지(PM2.5): <strong id="pm25-value">-</strong> µg/m³</p>
+    </section>
+
+    <!-- 시각화 차트 영역 -->
+    <section class="card">
+      <h2>주요 오염물질 수치 비교</h2>
+      <div style="position: relative; height: 300px; width: 100%;">
+        <canvas id="airChart"></canvas>
+      </div>
+    </section>
+
+    <div style="text-align: right;">
+      <button onclick="location.href='detail.html'">상세 수치 및 활동 가이드 보기 &rarr;</button>
+    </div>
+  </main>
+
+  <!-- 외부 차트 라이브러리 (Chart.js v3.9.1 CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
